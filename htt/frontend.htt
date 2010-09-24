@@ -1,0 +1,36 @@
+<div class="dirlist">
+	<h1>{header}</h1>
+  <div class="prefix">{prefix}</div>
+  <div class="directory">
+  	<table width="100%">
+    	<colgroup>
+      	<col width="60%">
+        <col width="15%">
+        <col width="25%">
+      </colgroup>
+    	<tr>
+      	<th class="th_file">
+        	<!-- btn -->
+          <form name="btn_file_{section}" action="{form_action}" method="post">
+          	<input type="hidden" name="sort{section}" value="{file_sort}">
+            <input type="submit" value="{file_btn_text}">
+          </form>
+        </th>
+        <th class="th_size">
+          <form name="btn_size_{section}" action="{form_action}" method="post">
+          	<input type="hidden" name="sort{section}" value="{size_sort}">
+            <input type="submit" value="{size_btn_text}">
+          </form>
+        </th>
+        <th class="th_date_{section}">
+          <form name="btn_date" action="{form_action}" method="post">
+          	<input type="hidden" name="sort{section}" value="{date_sort}">
+            <input type="submit" value="{date_btn_text}">
+          </form>
+        </th>
+      </tr>
+      {directory}
+    </table>
+  </div>
+  <div class="suffix">{suffix}</div>
+</div>

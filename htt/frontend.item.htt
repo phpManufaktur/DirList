@@ -1,0 +1,5 @@
+<tr>
+	<td class="td_file">{icon}&nbsp;{file}</td>
+  <td class="td_size">{size}</td>
+  <td class="td_date">{date}</td>
+</tr>

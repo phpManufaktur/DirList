@@ -1,0 +1,65 @@
+/*
+  CSS definition for Website Baker module: DirList
+  Copyright (c) 2007, Ralf Hertsch
+  Contact me: hertsch(at)berlin.de, http://ralf-hertsch.de
+
+  This CSS file is free software. You can redistribute it and/or modify it
+  under the terms of the GNU General Public License  - version 2 or later,
+  as published by the Free Software Foundation: http://www.gnu.org/licenses/gpl.html.
+
+  This CSS file is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+*/
+
+
+/*
+	Prompting Errors
+*/
+.dirlist_error {
+	padding: 20px;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  background-color: #ffbf00;
+  font-weight: bold;
+	}
+
+.dirlist {
+	padding: 20px;
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: #ffffcc;
+  font-size: 10pt;
+  font-weight: normal;
+	}
+.dirlist h1 {
+	text-align: left;
+  font-size: 12pt;
+	}
+.dirlist select,
+.dirlist textarea,
+.dirlist input {
+	width: 100%;
+	}
+.dirlist input[type=checkbox] {
+  width: 5%;
+  }
+.dl_txt,
+.dl_txt_area {
+	padding: 15px 0 5px 0;
+	}
+.dl_select {
+	padding: 15px 5px 5px 5px;
+	color: #000000;
+  background-color: #ffcc99;
+	}
+.dirlist_btn {
+	clear: both;
+  padding: 15px;
+	}
+.dirlist_btn input {
+	float: left;
+  width: 45%;
+  margin: 0 15px;
+  }

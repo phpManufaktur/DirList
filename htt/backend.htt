@@ -1,0 +1,44 @@
+<div class="dirlist">
+	<h1>{h1}</h1>
+  <div>{description}</div>
+  <dir class="dirlist_form">
+  	<form name="dl_form" action="{form_action}" method="post">
+    	<input type="hidden" name="page_id" value="{page_id}">
+      <input type="hidden" name="section_id" value="{section_id}">
+      <div class="dl_txt">
+	      <div>{text_header}</div>
+	      <input name="header" type="text" value="{value_header}">
+	    </div>
+	    <div class="dl_txt_area">
+	      <div>{text_prefix}</div>
+	      <textarea name="prefix">{value_prefix}</textarea>
+	    </div>
+	    <div class="dl_select">
+	      <div>{text_select}</div>
+	      {directory}
+	    </div>
+	    <div class="dl_select">
+	    	<div>{text_sort}</div>
+	    	{sort}
+	    </div>
+      <div class="dl_select">
+      	<div>{text_preselect}</div>
+        <select name="exclude">
+        	{exclude_option}
+        </select>&nbsp;
+        <input type="text" name="extensions" value="{value_extensions}">
+      </div>
+      <div class="dl_select">
+      	<input type="checkbox" name="blank" value="1"{blank_checked}>&nbsp;{text_blank}
+      </div>
+	    <div class="dl_txt_area">
+	      <div>{text_suffix}</div>
+	      <textarea name="suffix">{value_suffix}</textarea>
+	    </div>
+      <div class="dirlist_btn">
+	      <input name="dl_btn_submit" type="submit" value="{btn_submit}">
+        <input name="dl_btn_abort" type="button" value="{btn_abort}" onclick="javascript: window.location = '{abort_location}'; return false;"/>
+      </div>
+    </form>
+  </dir>
+</div>

@@ -1,0 +1,49 @@
+/*
+  CSS definition for Website Baker module: DirList
+  Copyright (c) 2007, Ralf Hertsch
+  Contact me: hertsch(at)berlin.de, http://ralf-hertsch.de
+
+  This CSS file is free software. You can redistribute it and/or modify it
+  under the terms of the GNU General Public License  - version 2 or later,
+  as published by the Free Software Foundation: http://www.gnu.org/licenses/gpl.html.
+
+  This CSS file is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+*/
+
+
+th {
+	background-color: #000;
+  color: #fff;
+	}
+th input {
+	text-align: left;
+	width: 100%;
+	}
+td {
+	text-align: left;
+	}
+.dirlist {
+	font-size: 10pt;
+	}
+
+.dirlist h1 {
+	font-size: 13pt;
+  font-style: bold;
+  }
+.prefix {
+	padding: 15px 0;
+	}
+.suffix {
+	padding: 30px;
+  font-size: 8pt;
+  text-align: center;
+	}
+td.td_size,
+th.th_size,
+td.td_date,
+th.th_date {
+	text-align: right;
+	}
