@@ -1,16 +1,35 @@
 <?php
+
 /**
-* Simple TemplateParser Class
-*
-* @author  :  MA Razzaque Rupom <rupom_315@yahoo.com>, <rupom.bd@gmail.com>
-*             Moderator, phpResource (http://groups.yahoo.com/group/phpresource/)
-*             URL: http://www.rupom.info
-*             Additional Features by
-*             Ralf Hertsch, Berlin (Germany) - <hertsch@berlin.de>
-* @version :  2.0
-* Purpose  :  Parsing Simple Template File and Data that Contains Macros
-* @abstract template Parsing
-*/
+ * DirList
+ *
+ * @author Ralf Hertsch <ralf.hertsch@phpmanufaktur.de>
+ * @link http://phpmanufaktur.de
+ * @copyright 2007 - 2012
+ * @license MIT License (MIT) http://www.opensource.org/licenses/MIT
+ */
+
+// include class.secure.php to protect this file and the whole CMS!
+if (defined('WB_PATH')) {
+  if (defined('LEPTON_VERSION'))
+    include(WB_PATH.'/framework/class.secure.php');
+}
+else {
+  $oneback = "../";
+  $root = $oneback;
+  $level = 1;
+  while (($level < 10) && (!file_exists($root.'/framework/class.secure.php'))) {
+    $root .= $oneback;
+    $level += 1;
+  }
+  if (file_exists($root.'/framework/class.secure.php')) {
+    include($root.'/framework/class.secure.php');
+  }
+  else {
+    trigger_error(sprintf("[ <b>%s</b> ] Can't include class.secure.php!", $_SERVER['SCRIPT_NAME']), E_USER_ERROR);
+  }
+}
+// end include class.secure.php
 
 class templateParser
 {
@@ -67,32 +86,32 @@ class templateParser
    }
 
   function encodeSpecialChars(&$value) {
-  	$value = ereg_replace("ä","&auml;",$value);
-  	$value = ereg_replace("Ä","&Auml;",$value);
-  	$value = ereg_replace("ö","&ouml;",$value);
-  	$value = ereg_replace("Ö","&Ouml;",$value);
-  	$value = ereg_replace("ü","&uuml;",$value);
-  	$value = ereg_replace("Ü","&Uuml;",$value);
-  	$value = ereg_replace("ß","&szlig;",$value);
-  	$value = ereg_replace("€","&euro;",$value);
+  	$value = ereg_replace("ï¿½","&auml;",$value);
+  	$value = ereg_replace("ï¿½","&Auml;",$value);
+  	$value = ereg_replace("ï¿½","&ouml;",$value);
+  	$value = ereg_replace("ï¿½","&Ouml;",$value);
+  	$value = ereg_replace("ï¿½","&uuml;",$value);
+  	$value = ereg_replace("ï¿½","&Uuml;",$value);
+  	$value = ereg_replace("ï¿½","&szlig;",$value);
+  	$value = ereg_replace("ï¿½","&euro;",$value);
     return $value;
   }
 
   function decodeSpecialChars(&$value) {
-   	$value = ereg_replace("&auml;","ä",$value);
-   	$value = ereg_replace("&Auml;","Ä",$value);
-   	$value = ereg_replace("&ouml;","ö",$value);
-   	$value = ereg_replace("&Ouml;","Ö",$value);
-   	$value = ereg_replace("&uuml;","ü",$value);
-   	$value = ereg_replace("&Uuml;","Ü",$value);
-   	$value = ereg_replace("&szlig;","ß",$value);
-   	$value = ereg_replace("&euro;","€",$value);
+   	$value = ereg_replace("&auml;","ï¿½",$value);
+   	$value = ereg_replace("&Auml;","ï¿½",$value);
+   	$value = ereg_replace("&ouml;","ï¿½",$value);
+   	$value = ereg_replace("&Ouml;","ï¿½",$value);
+   	$value = ereg_replace("&uuml;","ï¿½",$value);
+   	$value = ereg_replace("&Uuml;","ï¿½",$value);
+   	$value = ereg_replace("&szlig;","ï¿½",$value);
+   	$value = ereg_replace("&euro;","ï¿½",$value);
     return $value;
   }
 
   /**
-  *	Fügt dem "macro=>value" Array Werte hinzu und maskiert Sonderzeichen für die HTML Ausgabe
-  * @param string $key Schlüssel
+  *	Fï¿½gt dem "macro=>value" Array Werte hinzu und maskiert Sonderzeichen fï¿½r die HTML Ausgabe
+  * @param string $key Schlï¿½ssel
   * @param string $value Wert
   * @param boolean $encode=true Sonderzeichen maskieren
   */
@@ -110,7 +129,7 @@ class templateParser
   }
 
   /**
-   * Setzt das "macro=>value" Array zurück
+   * Setzt das "macro=>value" Array zurï¿½ck
    *
    */
   function clear($resetHTML=false) {

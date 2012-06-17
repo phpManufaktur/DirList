@@ -1,5 +1,36 @@
 <?php
 
+/**
+ * DirList
+ *
+ * @author Ralf Hertsch <ralf.hertsch@phpmanufaktur.de>
+ * @link http://phpmanufaktur.de
+ * @copyright 2007 - 2012
+ * @license MIT License (MIT) http://www.opensource.org/licenses/MIT
+ */
+
+// include class.secure.php to protect this file and the whole CMS!
+if (defined('WB_PATH')) {
+  if (defined('LEPTON_VERSION'))
+    include(WB_PATH.'/framework/class.secure.php');
+}
+else {
+  $oneback = "../";
+  $root = $oneback;
+  $level = 1;
+  while (($level < 10) && (!file_exists($root.'/framework/class.secure.php'))) {
+    $root .= $oneback;
+    $level += 1;
+  }
+  if (file_exists($root.'/framework/class.secure.php')) {
+    include($root.'/framework/class.secure.php');
+  }
+  else {
+    trigger_error(sprintf("[ <b>%s</b> ] Can't include class.secure.php!", $_SERVER['SCRIPT_NAME']), E_USER_ERROR);
+  }
+}
+// end include class.secure.php
+
 define('dl_error_add_record',						'<p>une erreur est survenue lors de l\'ajout d\'un enregistrement</p><p>[%s] <strong>%s</strong></p>');
 define('dl_error_create_table',					'<p>une erreur est survenue lors de la cr&eacute;ation d\'une table</p><p>[%s] <strong>%s</strong></p>');
 define('dl_error_delete_record',				'<p>une erreur est survenie lors de la suppression d\'un enregistrement</p><p>[%s] <strong>%s</strong></p>');
@@ -15,7 +46,7 @@ define('dl_error_row_empty',						'pas d\entr&eacute;e dans la table');
 define('dl_error_update_record',				'<p>une erreur est survenue lors de la mise &agrave; jour de la table</p><p>[%s] <strong>%s</strong></p>');
 
 define('dl_upgrade_field_exists',				'<p>Le champs "<strong>%s</strong>" existe d&eacute;j&agrave;.</p>');
-define('dl_upgrade_insert_field',				'<p>Le champs "<strong>%s</strong>" a correctement &eacute;t&eacute; ajout&eacute; à la table.</p>');
+define('dl_upgrade_insert_field',				'<p>Le champs "<strong>%s</strong>" a correctement &eacute;t&eacute; ajout&eacute; ï¿½ la table.</p>');
 
 define('dl_backend_blank',							'Ouvrir le fichier dans une nouvelle fen&ecirc;tre.');
 define('dl_backend_btn_abort',					'Annuler');
